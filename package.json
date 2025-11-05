@@ -1,0 +1,24 @@
+{
+  "name": "day-one-content-operations",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Day One Content Operations",
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "build": "pnpm run --parallel build"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "dependencies": {
+    "@sanity/image-url": "^1.2.0",
+    "next-sanity": "^10.1.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "@sanity/client": "7.12.1"
+    }
+  }
+}
+
