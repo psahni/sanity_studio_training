@@ -1,0 +1,23 @@
+{
+  "_createdAt": "2024-02-11T17:20:18Z",
+  "_id": "AUoLUkEDo6CVeRx5svBjGN",
+  "_rev": "upFaxeflJFPBngjKs4FZDZ",
+  "_type": "event",
+  "_updatedAt": "2025-11-05T12:17:52Z",
+  "date": "2019-11-16T17:16:25.201Z",
+  "doorsOpen": 250,
+  "eventType": "in-person",
+  "headline": {
+    "_ref": "artist-interpol",
+    "_type": "reference"
+  },
+  "name": "Interpol at The Troubadour",
+  "slug": {
+    "_type": "slug",
+    "current": "interpol-at-the-troubadour"
+  },
+  "venue": {
+    "_ref": "venue-ziggo-dome",
+    "_type": "reference"
+  }
+}

@@ -1,0 +1,15 @@
+---
+title: git status
+description: Summerize git status
+commands:
+  - name: /status
+    description: Check the git status and summerize
+    when: any file got changed
+---
+
+## /status Command
+
+When user runs `/status`:
+
+1. Analyse git status (`@git`)
+2. Summerize the changes

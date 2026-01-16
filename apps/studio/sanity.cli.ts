@@ -12,5 +12,8 @@ export default defineCliConfig({
      */
     autoUpdates: true,
     appId: 'ilvu0n40y3u164fd2hreu5by'
-  }
+  },
+  server: {
+    port: 3334,
+  },
 })
