@@ -19,6 +19,7 @@ Usage examples:
 Env loading:
   - Automatically reads `.env.local` if present (repo root or `apps/web/.env.local`)
   - You can also pass `--env-file path/to/.env.local`
+  - Requires: `python-dotenv` (install with `python3 -m pip install python-dotenv`)
 """
 
 from __future__ import annotations
@@ -32,68 +33,49 @@ import urllib.error
 import urllib.request
 from typing import Any, Dict, Optional
 
+try:
+    from dotenv import load_dotenv
+except Exception:  # pragma: no cover
+    load_dotenv = None  # type: ignore[assignment]
+
 
 DEFAULT_PROJECT_ID = "9057gu4d"
 DEFAULT_DATASET = "production"
 DEFAULT_API_VERSION = "2025-07-09"
 
 
-def load_env_file(file_path: str) -> None:
+def load_env_files(env_file: Optional[str]) -> None:
     """
-    Minimal dotenv loader (no dependencies).
-    - Supports: KEY=VALUE, export KEY=VALUE
-    - Ignores blank lines and # comments
-    - Does NOT overwrite existing environment variables
+    Load `.env.local` values into the process environment (without overwriting real env vars).
+    Uses `python-dotenv` for correctness and quoting support.
     """
 
-    if not file_path:
-        return
-
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            for raw_line in f:
-                line = raw_line.strip()
-                if not line or line.startswith("#"):
-                    continue
-
-                if line.startswith("export "):
-                    line = line[len("export ") :].strip()
-
-                if "=" not in line:
-                    continue
-
-                key, value = line.split("=", 1)
-                key = key.strip()
-                value = value.strip()
-
-                if not key:
-                    continue
-
-                if (value.startswith('"') and value.endswith('"')) or (value.startswith("'") and value.endswith("'")):
-                    value = value[1:-1]
-
-                os.environ.setdefault(key, value)
-    except FileNotFoundError:
-        return
-
-
-def load_default_env_files() -> None:
-    """
-    Load `.env.local` if present (common Next.js convention), without overwriting real env vars.
-    We try multiple locations to match typical monorepo layouts.
-    """
+    if load_dotenv is None:
+        print(
+            "Missing dependency: python-dotenv.\n"
+            "Install it with: python3 -m pip install python-dotenv",
+            file=sys.stderr,
+        )
+        raise SystemExit(2)
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     repo_root = os.path.dirname(script_dir)
 
-    candidates = [
-        os.path.join(repo_root, ".env.local"),
-        os.path.join(repo_root, "apps", "web", ".env.local"),
-        os.path.join(repo_root, "apps", "studio", ".env.local"),
-    ]
+    candidates: list[str] = []
+    if env_file:
+        candidates.append(env_file)
+
+    candidates.extend(
+        [
+            os.path.join(repo_root, ".env.local"),
+            os.path.join(repo_root, "apps", "web", ".env.local"),
+            os.path.join(repo_root, "apps", "studio", ".env.local"),
+        ]
+    )
 
     for candidate in candidates:
-        load_env_file(candidate)
+        if os.path.exists(candidate):
+            load_dotenv(dotenv_path=candidate, override=False)
 
 
 def slugify(value: str) -> str:
@@ -247,12 +229,8 @@ def get_env_file_from_argv(argv: list[str]) -> Optional[str]:
 
 
 def main(argv: list[str]) -> int:
-    load_default_env_files()
-
-    # If user specifies an env file, load it before parsing so it can affect defaults.
-    env_file = get_env_file_from_argv(argv)
-    if env_file:
-        load_env_file(env_file)
+    # Load env files before parsing so env vars can affect CLI defaults.
+    load_env_files(get_env_file_from_argv(argv))
 
     args = parse_args(argv)
 
@@ -298,3 +276,11 @@ def main(argv: list[str]) -> int:
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
 
+
+
+# python3 scripts/sanity_create_event.py \
+#   --name "Concert at Altamont Free Concert" \
+#   --format in-person \
+#   --date "2026-02-01T19:30:00Z" \
+#   --doors-open 60 \
+#   --venue-id "venue-altamont-free-concert"
