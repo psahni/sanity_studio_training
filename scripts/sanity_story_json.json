@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "story_id": "7f5fe8e8-33a5-4e6d-9abd-1274a07cb749",
+      "headline": "[Created Via Script] Sovereign CBs Defend Fed Autonomy: Policy Alpha Erosion Risks Global Macro Liquidity & Yields",
+      "publishedAt": "2026-01-15T08:30:00Z",
+      "topics": [
+        "AI",
+        "Healthcare",
+        "Technology",
+        "Innovation"
+      ],
+      "created_At": "2026-01-10T12:00:00Z",
+      "persona_info": [
+        {
+          "persona_id": "independent_investors",
+          "story_id": "7f5fe8e8-33a5-4e6d-9abd-1274a07cb749",
+          "headline": "AI Breakthroughs Creating New Healthcare Investment Opportunities",
+          "summary": "AI-driven diagnostics and personalized medicine are opening new markets for early-stage healthcare investments.",
+          "moderation": {
+            "score": 1,
+            "reasoning": null,
+            "flagged_rules": []
+          },
+          "question_answers": [
+            {
+              "question": "What are the emerging AI technologies in healthcare?",
+              "answer": "Emerging AI technologies include machine learning algorithms for diagnostics, AI-powered imaging analysis, and personalized treatment planning."
+            },
+            {
+              "question": "Which companies are leading AI innovation in healthcare?",
+              "answer": "Companies like IBM Watson Health, Google Health, and startups such as PathAI and Zebra Medical Vision are at the forefront of AI innovation in healthcare."
+            }
+          ]
+        },
+        {
+          "persona_id": "market_analysts",
+          "story_id": "7f5fe8e8-33a5-4e6d-9abd-1274a07cb749",
+          "headline": "AI Healthcare Adoption Signals Structural Industry Shift",
+          "summary": "Data shows accelerated AI adoption across providers, indicating long-term transformation of healthcare economics.",
+          "question_answers": [
+            {
+              "question": "How does this global reaffirmation of central bank independence directly impact the stability and long-term preservation of our diversified wealth portfolios?",
+              "answer": "This collective stance by global financial leaders reinforces the commitment to stable economic conditions, which is fundamental for safeguarding the real value of significant wealth against inflation and market volatility over time."
+            },
+            {
+              "question": "What reassurance does this unprecedented global response offer regarding the foundational stability of key financial jurisdictions and the international monetary system?",
+              "answer": "The unified support signals a robust global commitment to institutional integrity, ensuring that major financial centers remain reliable environments for secure asset allocation and preserving the predictability essential for international capital."
+            },
+            {
+              "question": "Given these global signals, how should UHNWIs assess their asset allocation strategies, particularly concerning jurisdictions known for stability and high-value assets?",
+              "answer": "Such events underscore the wisdom of diversifying into demonstrably stable jurisdictions, like the UAE, which offer robust regulatory frameworks and secure environments for high-prestige assets such as luxury real estate, providing essential insulation against broader political uncertainties."
+            }
+          ]
+        },
+        {
+          "persona_id": "retail_observers",
+          "story_id": "7f5fe8e8-33a5-4e6d-9abd-1274a07cb749",
+          "headline": "Strategic Imperative: Integrating AI into Healthcare Operations",
+          "summary": "Executives must prioritize AI integration to enhance patient outcomes and operational efficiency in healthcare organizations."
+        }
+      ],
+      "article_data": [
+        {
+          "article_id": "cc2da3edc2b9aceeff06323538ef034fdea430668d518de4d332346346b50927",
+          "title": "Global central bank chiefs defend Fed's Powell after Trump threat",
+          "source": "Gulf Times",
+          "url": "https://www.gulf-times.com/article/718508/business/global-central-bank-chiefs-defend-feds-powell-after-trump-threat",
+          "publication_date": "2026-01-12T21:00:00+00:00",
+          "company_names": [],
+          "stock_symbols": [],
+          "topics": []
+        },
+        {
+          "article_id": "0514ba301b6ead028215954e487b5ecf3c566f5bde81ae799a5a95a78c4bc5a6",
+          "title": "Jerome Powell: The careful Fed chair standing firm against Trump",
+          "source": "Gulf Times",
+          "url": "https://www.gulf-times.com/article/718507/business/jerome-powell-the-careful-fed-chair-standing-firm-against-trump",
+          "publication_date": "2026-01-12T21:00:00+00:00",
+          "company_names": [],
+          "stock_symbols": [],
+          "topics": []
+        },
+        {
+          "article_id": "01374863cc8f8dd265306b7b3ee0e9cf8ced6a5d96bda42c45d8bbc775cfff16",
+          "title": "Investors anxious over make-or-break fight for the Fed",
+          "source": "Gulf Times",
+          "url": "https://www.gulf-times.com/article/718458/business/investors-anxious-over-make-or-break-fight-for-the-fed",
+          "publication_date": "2026-01-11T21:00:00+00:00",
+          "company_names": [],
+          "stock_symbols": [],
+          "topics": []
+        }
+      ]
+    }
+  ]
+}

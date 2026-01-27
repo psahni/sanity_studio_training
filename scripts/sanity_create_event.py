@@ -39,9 +39,9 @@ except Exception:  # pragma: no cover
     load_dotenv = None  # type: ignore[assignment]
 
 
-DEFAULT_PROJECT_ID = "9057gu4d"
+DEFAULT_PROJECT_ID = "d6yzt76s"
 DEFAULT_DATASET = "production"
-DEFAULT_API_VERSION = "2025-07-09"
+DEFAULT_API_VERSION = "2026-01-22"
 
 
 def load_env_files(env_file: Optional[str]) -> None:
